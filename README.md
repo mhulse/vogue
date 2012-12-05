@@ -69,6 +69,14 @@ More information coming soon.
 
 ---
 
+#### DEMO
+
+[![qr code](http://chart.apis.google.com/chart?cht=qr&chl=http://registerguard.github.com/vogue/vogue/&chs=240x240)](http://registerguard.github.com/vogue/vogue/)
+
+(Scan QR code with phone and/or click to [view the latest demo](http://registerguard.github.com/vogue/vogue/).)
+
+---
+
 #### LEGAL
 
 Copyright © 2012 [First Last](http://site.com)
