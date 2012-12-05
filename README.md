@@ -1,4 +1,4 @@
-# Vogue
+# Come on, vogue.
 
 ```
 MMMMMMMMMMMMMMMMMMMMMM8O?~OMMMMMM=NNNNDOZZ$$$ZOOODNMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
@@ -53,12 +53,19 @@ MMMMI=~==~~~~~:::~??=~~=~=?=?+?7O=?IIZ$7?+++===:~,,~::,,~::::::~:,,,,~$MMMMMMMMM
 MMMM=~~~~~~~~~=:~::,Z=~=======++=?7$$OZ7I?++==I::,,,~,,,~~:::,:~~:,,::~MMMMMMMMM
 MMN~~~~+:::~~~~~=::~,$+====+??+====~~~~=+?+==~=~:,,.~,,,,~:::::::~::,:,MMMMMMMMM
 ```
-### Come on, vogue
-### Let your images swap to the responsiveness (swap to the responsiveness)
-### Hey, hey, hey
-### Come on, vogue
-### Let your images change with the breakpoints (change with the breakpoints)
-### You know you can do it
+### Let your images swap to the responsiveness (swap to the responsiveness).
+### Hey, hey, hey.
+### Come on, vogue.
+### Let your images change with the breakpoints (change with the breakpoints).
+### You know you can do it.
+
+---
+
+#### ABOUT
+
+Code currently in **BETA** mode.
+
+More information coming soon.
 
 ---
 
