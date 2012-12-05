@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+
+<head>
+	
+	<meta charset="utf-8">
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	
+	<title>Responsive Images</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	
+	<link rel="stylesheet" href="css/demo.css">
+	
+</head>
+<body>
+	
+	<img src="img/640.jpg" alt="" width="300">
+	
+	<hr>
+	
+	<img
+		src="img/130.jpg"
+		data-src-alpha="img/300.jpg"
+		data-src-alpha-retina="img/640.jpg"
+		class="responsive"
+		alt=""
+	>
+	
+	<hr>
+	
+	<img
+		src="img/300.jpg"
+		data-src-alpha="img/300.jpg"
+		data-src-alpha-retina="img/640.jpg"
+		data-src-bravo="img/470.jpg"
+		data-src-bravo-retina="img/980.jpg"
+		data-src-charlie="img/640.jpg"
+		data-src-charlie-retina="img/1320.jpg"
+		data-src-delta="img/810.jpg"
+		data-src-delta-retina="img/1620.jpg"
+		class="responsive"
+	>
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script src="js/onmediaquery.js"></script>
+	<script>
+		<!--
+			
+			/**
+			 * Response.dpr(decimal) Tests if a minimum device pixel ratio is active.
+			 * Or (version added in 0.3.0) returns the device-pixel-ratio
+			 *
+			 *
+			 * @param number decimal is the integer or float to test.
+			 *
+			 * @return boolean|number
+			 * @example Response.dpr(); // get the device-pixel-ratio (or 0 if undetectable)
+			 * @example Response.dpr(1.5); // true when device-pixel-ratio is 1.5+
+			 * @example Response.dpr(2); // true when device-pixel-ratio is 2+
+			 * @example Response.dpr(3/2); // [!] FAIL (Gotta be a decimal or integer)
+			 *
+			 */
+			
+			function dpr(decimal) {
+				
+				var dPR = window.devicePixelRatio,
+				media = window.matchMedia || window.msMatchMedia || Object;
+				
+				if (decimal == null) {
+					
+					// Return exact value or kinda iterate for approx:
+					return dPR || (dpr(2) ? 2 : dpr(1.5) ? 1.5 : dpr(1) ? 1 : 0);
+					
+				}
+				
+				if ( ! isFinite(decimal)) {
+					
+					// Shh. Actually allows numeric strings too. ;)
+					return false;
+					
+				}
+				
+				// Use window.devicePixelRatio if supported - supported by Webkit
+				// (Safari/Chrome/Android) and Presto 2.8+ (Opera) browsers.
+				
+				if (dPR && dPR > 0) {
+					
+					return dPR >= decimal;
+					
+				}
+				
+				// Fallback to .matchMedia/.msMatchMedia. Supported by Gecko (FF6+) and more:
+				// @link developer.mozilla.org/en/DOM/window.matchMedia
+				// -webkit-min- and -o-min- omitted (Webkit/Opera supported above)
+				// The generic min-device-pixel-ratio is expected to be added to the W3 spec.
+				// Return false if neither method is available.
+				
+				decimal = 'only all and (min--moz-device-pixel-ratio:' + decimal + ')';
+				if (media(decimal).matches) { return true; }
+				return !! media(decimal.replace('-moz-', '')).matches;
+				
+			} // dpr()
+			
+			var queries = [
+				{
+					context  : 'alpha',
+					match : function() {
+						
+						console.log(oMQ.getContext());
+						
+						$('.responsive').attr('data-src-alpha' + ((dpr()) ? '-retina' : ''), function(i, val) {
+							$(this).attr('src', val);
+						});
+						
+					}
+				},
+				{
+					context  : 'bravo',
+					match : function() {
+						
+						console.log(oMQ.getContext());
+						
+						$('.responsive').attr('data-src-bravo' + ((dpr()) ? '-retina' : ''), function(i, val) {
+							$(this).attr('src', val);
+						});
+						
+					}
+				},
+				{
+					context  : 'charlie',
+					match : function() {
+						
+						console.log(oMQ.getContext());
+						
+						$('.responsive').attr('data-src-charlie' + ((dpr()) ? '-retina' : ''), function(i, val) {
+							$(this).attr('src', val);
+						});
+						
+					}
+				},
+				{
+					context  : 'delta',
+					match : function() {
+						
+						console.log(oMQ.getContext());
+						
+						$('.responsive').attr('data-src-delta' + ((dpr()) ? '-retina' : ''), function(i, val) {
+							$(this).attr('src', val);
+						});
+						
+					}
+				}
+			];
+			
+			$(document).ready(function() {
+				
+				oMQ.init(queries);
+				
+			});
+			
+		//-->
+	</script>
+	
+</body>
+</html>
