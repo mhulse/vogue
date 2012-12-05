@@ -79,7 +79,7 @@ More information coming soon.
 
 #### LEGAL
 
-Copyright © 2012 [First Last](http://site.com)
+Copyright © 2012 [Micky Hulse](http://hulse.me)/[The Register-Guard](http://www.registerguard.com)
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this work except in compliance with the License. You may obtain a copy of the License in the LICENSE file, or at:
 
